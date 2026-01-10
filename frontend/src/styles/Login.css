@@ -12,7 +12,7 @@ body {
 .login-page {
   width: 100vw;
   height: 100vh;
-  background: #eef1f4;
+  background: beige; /* was #eef1f4 */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -23,7 +23,7 @@ body {
 .login-card {
   width: 100%;
   max-width: 420px;
-  background: #ffffff;
+  background: beige; /* was #ffffff */
   border-radius: 14px;
   padding: 36px 34px;
   box-shadow:
@@ -40,14 +40,13 @@ body {
   margin: 0;
   font-size: 24px;
   font-weight: 700;
-  /* color: #1e293b; */
-  color: #914c84;
+  color: olive; /* was #914c84 */
 }
 
 .login-header p {
   margin-top: 6px;
   font-size: 14px;
-  color: #64748b;
+  color: olive; /* was #64748b */
 }
 
 /* ===== FORM FIELDS ===== */
@@ -61,7 +60,7 @@ body {
   margin-bottom: 6px;
   font-size: 13px;
   font-weight: 500;
-  color: #334155;
+  color: olive; /* was #334155 */
 }
 
 .form-field input {
@@ -69,16 +68,16 @@ body {
   height: 44px;
   padding: 0 14px;
   border-radius: 9px;
-  border: 1px solid #e2e8f0;
-  background: #ffffff;
+  border: 1px solid olive; /* was #e2e8f0 */
+  background: beige; /* was #ffffff */
   font-size: 14px;
   transition: border 0.2s ease, box-shadow 0.2s ease;
 }
 
 .form-field input:focus {
   outline: none;
-  border-color: #8b5e83;
-  box-shadow: 0 0 0 3px rgba(139, 94, 131, 0.25);
+  border-color: olive; /* was #8b5e83 */
+  box-shadow: 0 0 0 3px rgba(107, 142, 35, 0.25); /* olive semi-transparent */
 }
 
 /* ===== BUTTON ===== */
@@ -88,8 +87,8 @@ body {
   margin-top: 10px;
   border-radius: 9px;
   border: none;
-  background: #8b5e83;
-  color: #ffffff;
+  background: olive; /* was #8b5e83 */
+  color: black; /* was #ffffff */
   font-size: 15px;
   font-weight: 600;
   cursor: pointer;
@@ -97,7 +96,7 @@ body {
 }
 
 .login-card button:hover {
-  background: #7a516f;
+  background: black; /* darker hover effect */
 }
 
 .login-card button:active {
