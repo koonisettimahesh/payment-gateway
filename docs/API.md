@@ -1,12 +1,6 @@
----
-
 # Payment Gateway API Documentation
 
-**Base URL:**
-
-```
-http://localhost:8000
-```
+**Base URL:** `http://localhost:8000`
 
 ---
 
@@ -17,6 +11,7 @@ http://localhost:8000
 ```http
 X-Api-Key: <merchant_api_key>
 X-Api-Secret: <merchant_api_secret>
+
 ```
 
 * **Public checkout endpoints** do **not require authentication**.
@@ -37,6 +32,7 @@ Checks application and database health.
   "database": "connected",
   "timestamp": "2024-01-15T10:30:00Z"
 }
+
 ```
 
 ---
@@ -49,10 +45,11 @@ Checks application and database health.
 
 **Headers:**
 
-```
+```http
 X-Api-Key: key_test_abc123
 X-Api-Secret: secret_test_xyz789
 Content-Type: application/json
+
 ```
 
 **Request Body:**
@@ -66,6 +63,7 @@ Content-Type: application/json
     "customer_name": "John Doe"
   }
 }
+
 ```
 
 **Response – 201 Created**
@@ -83,9 +81,8 @@ Content-Type: application/json
   "status": "created",
   "created_at": "2024-01-15T10:30:00Z"
 }
-```
 
----
+```
 
 ### Get Order
 
@@ -93,9 +90,10 @@ Content-Type: application/json
 
 **Headers:**
 
-```
+```http
 X-Api-Key: key_test_abc123
 X-Api-Secret: secret_test_xyz789
+
 ```
 
 **Response – 200 OK**
@@ -110,9 +108,8 @@ X-Api-Secret: secret_test_xyz789
   "created_at": "2024-01-15T10:30:00Z",
   "updated_at": "2024-01-15T10:30:00Z"
 }
-```
 
----
+```
 
 ### Get Public Order (Checkout)
 
@@ -129,6 +126,7 @@ Used by hosted checkout pages. **No authentication required.**
   "currency": "INR",
   "status": "created"
 }
+
 ```
 
 ---
@@ -141,8 +139,6 @@ Used by hosted checkout pages. **No authentication required.**
 
 Creates a payment from the hosted checkout page. **No authentication required.**
 
----
-
 #### UPI Payment
 
 **Request Body:**
@@ -153,18 +149,8 @@ Creates a payment from the hosted checkout page. **No authentication required.**
   "method": "upi",
   "vpa": "user@paytm"
 }
+
 ```
-
-**Response – 201 Created**
-
-```json
-{
-  "id": "pay_H8sK3jD9s2L1pQr",
-  "status": "processing"
-}
-```
-
----
 
 #### Card Payment
 
@@ -182,6 +168,7 @@ Creates a payment from the hosted checkout page. **No authentication required.**
     "holder_name": "John Doe"
   }
 }
+
 ```
 
 **Response – 201 Created**
@@ -191,9 +178,8 @@ Creates a payment from the hosted checkout page. **No authentication required.**
   "id": "pay_H8sK3jD9s2L1pQr",
   "status": "processing"
 }
-```
 
----
+```
 
 ### Get Payment Status
 
@@ -201,9 +187,10 @@ Creates a payment from the hosted checkout page. **No authentication required.**
 
 **Headers:**
 
-```
+```http
 X-Api-Key: key_test_abc123
 X-Api-Secret: secret_test_xyz789
+
 ```
 
 **Response – 200 OK**
@@ -219,6 +206,7 @@ X-Api-Secret: secret_test_xyz789
   "created_at": "2024-01-15T10:31:00Z",
   "updated_at": "2024-01-15T10:31:10Z"
 }
+
 ```
 
 ---
@@ -238,34 +226,22 @@ Returns seeded test merchant details.
   "api_key": "key_test_abc123",
   "seeded": true
 }
+
 ```
 
 ---
 
 ## Error Codes
 
-All errors follow this format:
-
-```json
-{
-  "error": {
-    "code": "ERROR_CODE",
-    "description": "Error description"
-  }
-}
-```
-
-**Supported Error Codes:**
-
-| Code                 | Description               |
-| -------------------- | ------------------------- |
-| AUTHENTICATION_ERROR | Invalid API credentials   |
-| BAD_REQUEST_ERROR    | Validation error          |
-| NOT_FOUND_ERROR      | Resource not found        |
-| INVALID_VPA          | VPA format invalid        |
-| INVALID_CARD         | Card validation failed    |
-| EXPIRED_CARD         | Card expiry invalid       |
-| PAYMENT_FAILED       | Payment processing failed |
+| Code | Description |
+| --- | --- |
+| `AUTHENTICATION_ERROR` | Invalid API credentials |
+| `BAD_REQUEST_ERROR` | Validation error |
+| `NOT_FOUND_ERROR` | Resource not found |
+| `INVALID_VPA` | VPA format invalid |
+| `INVALID_CARD` | Card validation failed |
+| `EXPIRED_CARD` | Card expiry invalid |
+| `PAYMENT_FAILED` | Payment processing failed |
 
 ---
 
@@ -275,6 +251,3 @@ All errors follow this format:
 * Payments skip the `created` state and start at `processing`.
 * CVV and full card numbers are **never stored**.
 * Public checkout APIs are unauthenticated by design.
-
----
-
