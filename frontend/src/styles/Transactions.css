@@ -7,7 +7,7 @@ body {
 }
 
 .transactions-page {
-  background: beige; /* was #f2f4f7 */
+  background: #f5f5f5; /* was beige */
   padding: 24px 16px;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
@@ -32,12 +32,12 @@ body {
 .transactions-header h1 {
   margin: 0;
   font-size: 28px;
-  color: olive; /* was #914c84 */
+  color: #1f2937; /* was olive */
 }
 
 /* ===== TABLE CARD ===== */
 .table-card {
-  background: beige; /* was #ffffff */
+  background: #ffffff; /* was beige */
   border-radius: 14px;
   padding: 0;
   box-shadow:
@@ -54,7 +54,7 @@ table {
 }
 
 thead {
-  background: beige; /* was #f7f8fa */
+  background: #f3f4f6; /* was beige */
 }
 
 th,
@@ -66,15 +66,15 @@ td {
 
 th {
   font-weight: 600;
-  color: olive; /* was #374151 */
+  color: #6b7280; /* was olive */
 }
 
 tbody tr {
-  border-top: 1px solid olive; /* was #e5e7eb */
+  border-top: 1px solid #e5e7eb; /* was olive */
 }
 
 tbody tr:hover {
-  background: beige; /* was #fafafa */
+  background: #f9fafb; /* was beige */
 }
 
 /* ===== STATUS ===== */
@@ -84,22 +84,22 @@ tbody tr:hover {
 }
 
 .status.success {
-  color: olive; /* was #15803d */
+  color: #14b8a6; /* teal */
 }
 
 .status.failed {
-  color: black; /* was #b91c1c */
+  color: #ef4444; /* red */
 }
 
 .status.processing {
-  color: olive; /* was #b45309, using olive as warm tone */
+  color: #f97316; /* orange */
 }
 
 /* ===== EMPTY STATE ===== */
 .empty {
   text-align: center;
   padding: 32px;
-  color: olive; /* was #6b7280 */
+  color: #6b7280; /* was olive */
 }
 
 /* ===== RESPONSIVE ===== */
